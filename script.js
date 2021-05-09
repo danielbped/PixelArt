@@ -5,10 +5,7 @@ window.onload = function () {
   let tamanhoQuadro = 5;
 
   geraCores();
-  criaInputTamanho();
-  criaBotaoTamanho();
   criaQuadro(tamanhoQuadro);
-  criaBotaoApagar();
   novoQuadro();
   pintaPixel();
   apagar();
@@ -54,6 +51,7 @@ window.onload = function () {
   let botaoTamanho = document.querySelector('#generate-board');
   let inputTamanho = document.querySelector('.input-size');
   botaoTamanho.addEventListener('click', mudaTamanho);
+  
   inputTamanho.addEventListener('keyup', function (event) {
     var key = event.which || event.keyCode;
     if (key == 13) {
@@ -99,31 +97,6 @@ window.onload = function () {
         novaLinha.appendChild(novaColuna);
       }
     }
-  }
-
-  function criaBotaoApagar() {
-    let criaBotao = document.createElement('button');
-    criaBotao.innerHTML = 'Limpar';
-    criaBotao.id = 'clear-board';
-    botoes.appendChild(criaBotao);
-  }
-
-  function criaInputTamanho() {
-    let criaInput = document.createElement('input');
-    criaInput.className = 'input-size';
-    criaInput.id = 'board-size';
-    criaInput.type = 'number';
-    criaInput.min = 1;
-    criaInput.placeholder = 'Tamanho';
-    botoes.appendChild(criaInput).focus();
-  }
-
-  function criaBotaoTamanho() {
-    let criaBotao = document.createElement('button');
-    criaBotao.innerHTML = 'VQV';
-    criaBotao.className = 'botao-tamanho';
-    criaBotao.id = 'generate-board';
-    botoes.appendChild(criaBotao);
   }
 
   function novoQuadro() {
