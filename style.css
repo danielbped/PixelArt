@@ -28,10 +28,16 @@ body {
 .color, .pixel {
     list-style: none;
     border: 1px solid black;
+}
+.color {
     width: 40px;
     height: 40px;
 }
 
+.pixel {
+    width: 40px;
+    height: 40px;
+}
 .input-size {
     width: 100px;
 }

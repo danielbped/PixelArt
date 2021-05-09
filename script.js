@@ -53,7 +53,16 @@ window.onload = function () {
 
   let botaoTamanho = document.querySelector('#generate-board');
   let inputTamanho = document.querySelector('.input-size');
-  botaoTamanho.addEventListener('click', function () {
+  botaoTamanho.addEventListener('click', mudaTamanho);
+  inputTamanho.addEventListener('keyup', function (event) {
+    var key = event.which || event.keyCode;
+    if (key == 13) {
+      mudaTamanho();
+    }
+  })
+
+
+  function mudaTamanho() {
     if (parseInt(inputTamanho.value) == parseInt(tamanhoQuadro)) {
       alert('O quadro já está no tamanho inserido');
     } else if (parseInt(inputTamanho.value) < 5 || inputTamanho.value === '') {
@@ -68,7 +77,7 @@ window.onload = function () {
       tamanhoQuadro = parseInt(inputTamanho.value);
       novoQuadro();
     }
-  });
+  }
 
   function criaPaletaCores(cores) {
     for (let index = 0; index < cores.length; index += 1) {
