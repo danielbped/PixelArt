@@ -1,7 +1,7 @@
 window.onload = function () {
   let paletaCores = document.querySelector('#color-palette');
   let quadro = document.querySelector('#pixel-board');
-  let botoes = document.querySelector('#botoes');
+  let inputCor = document.querySelector('#input-cor');
   let tamanhoQuadro = 5;
 
   geraCores();
@@ -9,6 +9,7 @@ window.onload = function () {
   novoQuadro();
   pintaPixel();
   apagar();
+  inputCores();
 
   let cores = document.querySelectorAll('.color');
 
@@ -51,6 +52,13 @@ window.onload = function () {
   let botaoTamanho = document.querySelector('#generate-board');
   let inputTamanho = document.querySelector('.input-size');
   botaoTamanho.addEventListener('click', mudaTamanho);
+
+  inputCor.addEventListener('keyup', function (event) {
+    if (event.keyCode == 13) {
+      inputMudaCores();
+    }
+  });
+
   
   inputTamanho.addEventListener('keyup', function (event) {
     var key = event.which || event.keyCode;
@@ -84,6 +92,16 @@ window.onload = function () {
       novaCor.style.backgroundColor = cores[index];
       paletaCores.appendChild(novaCor);
     }
+  }
+
+  function inputCores() {
+    let cores = document.querySelectorAll('.color');
+    for (let index = 0; index < cores.length; index += 1) {
+      let novoInput = document.createElement('input');
+      novoInput.className = 'input-color';
+      novoInput.placeholder = 'Insira a cor'
+      inputCor.appendChild(novoInput);
+    } 
   }
 
   function criaQuadro(tamanho) {
@@ -121,5 +139,16 @@ window.onload = function () {
       coresPaleta.push(novaCor);
     }
     criaPaletaCores(coresPaleta);
+  }
+  
+  //Resolver
+  function inputMudaCores() {
+    let cores = document.querySelectorAll('.color');
+    let inputMudaCor = document.querySelectorAll('.input-color');
+    for (let index = 0; index < inputMudaCor.length; index += 1) {
+      let novaCor = inputMudaCor[index].innerText;
+      cores[index].style.backgroundColor = novaCor;
+      console.log(novaCor)
+    } 
   }
 };
