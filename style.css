@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    background-color: lightgrey;
+}
+
+#color-palette li {
+    display: inline-block;
+}
+
+#color-palette li {
+    margin-right: 30px;
+}
+
+#pixel-board {
+    display: inline-block;
+}
+
+#botoes {
+    justify-content: center;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+#board-size {
+    margin-right: 15px;
+}
+
+.color, .pixel {
+    list-style: none;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+.input-size {
+    width: 100px;
+}
+
+.pixel {
+    background-color: white;
+}
+
+#generate-board {
+    margin-right: 15px;
+}
