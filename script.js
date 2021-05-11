@@ -3,13 +3,12 @@ window.onload = function () {
   let quadro = document.querySelector('#pixel-board');
   let inputCor = document.querySelector('#input-cor');
   let tamanhoQuadro = 5;
-
+  
   geraCores();
   criaQuadro(tamanhoQuadro);
   novoQuadro();
   pintaPixel();
   apagar();
-  inputCores();
 
   let cores = document.querySelectorAll('.color');
 
@@ -44,7 +43,7 @@ window.onload = function () {
       pixel[index].addEventListener('click', function (event) {
         let corSelecionada = document.querySelector('.color.selected');
         event.target.style.backgroundColor =
-          corSelecionada.style.backgroundColor;
+          corSelecionada.value;
       });
     }
   }
@@ -87,21 +86,11 @@ window.onload = function () {
 
   function criaPaletaCores(cores) {
     for (let index = 0; index < cores.length; index += 1) {
-      let novaCor = document.createElement('li');
+      let novaCor = document.createElement('input');
+      novaCor.type = 'color';
       novaCor.className = 'color';
-      novaCor.style.backgroundColor = cores[index];
       paletaCores.appendChild(novaCor);
     }
-  }
-
-  function inputCores() {
-    let cores = document.querySelectorAll('.color');
-    for (let index = 0; index < cores.length; index += 1) {
-      let novoInput = document.createElement('input');
-      novoInput.className = 'input-color';
-      novoInput.placeholder = 'Insira a cor'
-      inputCor.appendChild(novoInput);
-    } 
   }
 
   function criaQuadro(tamanho) {
@@ -127,8 +116,9 @@ window.onload = function () {
     pintaPixel();
   }
   
+  
   function geraCores() {
-    let coresPaleta = ['#000'];
+    let coresPaleta = ['black'];
     for (let index = 0; index < 3; index += 1) {
       let novaCor =
         '#' +
@@ -139,16 +129,5 @@ window.onload = function () {
       coresPaleta.push(novaCor);
     }
     criaPaletaCores(coresPaleta);
-  }
-  
-  //Resolver
-  function inputMudaCores() {
-    let cores = document.querySelectorAll('.color');
-    let inputMudaCor = document.querySelectorAll('.input-color');
-    for (let index = 0; index < inputMudaCor.length; index += 1) {
-      let novaCor = inputMudaCor[index].innerText;
-      cores[index].style.backgroundColor = novaCor;
-      console.log(novaCor)
-    } 
   }
 };
