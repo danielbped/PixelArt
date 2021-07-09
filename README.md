@@ -1,4 +1,4 @@
-# Projeto PixelArt
+# Projeto [PixelArt](https://github.com/tryber/sd-012-project-pixels-art/pull/15)
   - Módulo 1: Fundamentos do Desenvolvimento Web
     - Bloco 6: JavaScript: DOM, Eventos e Web Storage
     
