@@ -2,7 +2,7 @@
   - Módulo 1: Fundamentos do Desenvolvimento Web
     - Bloco 6: JavaScript: DOM, Eventos e Web Storage
     
-# Requisitos
+### Requisitos
 - [x] Adicione à página o título "Paleta de Cores".
 - [x] Adicione à página uma paleta de quatro cores distintas.
 - [x] Adicione a cor **preta** como a primeira cor da paleta de cores.
